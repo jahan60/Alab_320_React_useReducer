@@ -4,13 +4,26 @@ function ToDoItem({ todo, dispatch }) {
       <input
         type="checkbox"
         checked={todo.completed}
-        readOnly
+        onChange={() =>
+            dispatch({
+                type: "Toggle_ToDo",
+                payload: todo.id
+            })
+        }
       />
 
       <span>{todo.text}</span>
 
       <button>Edit</button>
-      <button disabled>Delete</button>
+      <button disabled={!todo.completed}
+      onClick={()=>
+        dispatch({
+            type:"Delete_ToDo",
+            payload:todo.id
+        })
+      }
+      >
+        Delete</button>
     </div>
   );
 }

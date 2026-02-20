@@ -12,6 +12,15 @@ export function todoReducer(state, action) {
         },
         ...state
       ];
+
+    case "Toggle_ToDo":
+        return state.map(todo =>
+            todo.id === action.payload? {...todo, completed: !todo.completed}
+            : todo
+        ) ;
+
+    case "Delete_ToDo":
+        return state.filter((todo)=> !todo.id == action.payload);   
     default:
       return state;
   }
