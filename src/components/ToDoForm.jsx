@@ -1,31 +1,32 @@
 import { useState } from "react";
 
-function TodoFrom({ dispatch }){
-    const [input, setInput]=useState("");
+function ToDoForm({ dispatch }) {
+  const [input, setInput] = useState("");
 
-    const handleSubmit = (e)=> {
-        e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-        if (input.trim()=== "") return;
+    if (input.trim() === "") return;
 
-        dispatch({
-            type: "Add_ToDo",
-            payload: input
-        });
-       // clear field after adding
-        setInput("");
-    };
+    dispatch({
+      type: "Add_ToDo",
+      payload: input
+    });
 
-    return(
-        <form onSubmit={handleSubmit}>
-            <input
-            type="text"
-            placeholder="Add task"
-            value ={input}
-            onChange={(e) => setInput(e.target.value)}/>
-            <button type ="submit">Add</button>
-        </form>
-    )
+    setInput(""); // clear field
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Add task"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      />
+      <button type="submit">Add</button>
+    </form>
+  );
 }
 
-export default TodoFrom;
+export default ToDoForm;
