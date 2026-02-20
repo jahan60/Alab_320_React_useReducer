@@ -1,6 +1,6 @@
 export const initialState = [];
 
-export function todoReducer(state, action)
+export function todoReducer(state, action){
 switch (action.type){
     case "Add_ToDo":
         return [
@@ -14,5 +14,5 @@ switch (action.type){
 
           default:
             return state
-
+        }
 }
