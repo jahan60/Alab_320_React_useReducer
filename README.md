@@ -1,16 +1,42 @@
-# React + Vite
+## Introduction:
+A simple, interactive Todo list applicatio built with React. This project demonstrates core front-end skills includng conditional rendering, controlled inputs and component-based structure.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features:
+1. Add new tasks
+2. Edit existing task
+3. Save updating task
+4. Delete Tasks.
+5. Mark task as completed
 
-Currently, two official plugins are available:
+## What I learned:
+1. How to manage component state using useState.
+2. How to use useReducer to manage more complex state logic with state flow.
+3. How reducers help organize actions like add, edit, delete and toggle into clean maintainable code. 
+4. How to handle user input and form validation.
+5. How to conditionally render UI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## How the files work together: The files from components connect through app.jsx and the reducer.
+1. App.jsx: Holds the main todo state using useReducer.
+2. Imports the reducer logic.
+3. Passes todos to Todo list.
+4. Passes dispatch to TodoForm and TodoItem.
 
-## React Compiler
+## todoReducer: 
+1. Contains all the logic for updating state.
+2. Handles actions like add, edit, save delete and toggle.
+3. App.jsx uses this file to decide how the todo list changes.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## TodoForm:
+1. Handles adding new tasks.
+2. Uses dispatch to send an add action to the reducer.
+3. This is where todo enter the system.
 
-## Expanding the ESLint configuration
+## TodoList: 
+1. Receives the full todos array from App.jsx.
+2. Loop through todos and renders a TodoItem for each one.
+2. This component only display the list.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## TodoItem:
+1. Handles editing, saving, deleting, and toggling a single task.
+2. Uses dispatch to send actions like edit, save, delete and toggle.
+3. This is where all per=task interaction happen.
