@@ -4,7 +4,7 @@ function ToDoItem({ todo, dispatch }) {
   const [editText, setEditText] = useState(todo.text);
 
   return (
-    <div>
+    <div className="todo-item">
       <input
         type="checkbox"
         checked={todo.completed}
@@ -16,7 +16,6 @@ function ToDoItem({ todo, dispatch }) {
         }
       />
 
-   
       {todo.isEditing ? (
         <>
           <input

@@ -1,42 +1,127 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+
+body {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  background: #f2f2f2;
+}
+
+.app{
+  max-width:500px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.app h1 {
   text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+form button {
+  padding: 10px 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+form button:hover {
+  background: #005fcc;
+}
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: #f8f8f8;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+.todo-item input[type="checkbox"] {
+  transform: scale(1.2);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-item span {
+  flex: 1;
+  font-size: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.todo-item button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
-.card {
-  padding: 2em;
+.todo-item button:nth-child(1) {
+  background: #ffc107;
+  color: #333;
 }
 
-.read-the-docs {
-  color: #888;
+.todo-item button:nth-child(1):hover {
+  background: #e0a800;
 }
+.todo-item button:nth-child(2) {
+  background: #dc3545;
+  color: white;
+}
+
+.todo-item button:nth-child(2):hover {
+  background: #b52a36;
+}
+
+.todo-item button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.todo-item input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
