@@ -3,12 +3,12 @@ import { useState } from "react";
 function ToDoForm({ dispatch }) {
   const [input, setInput] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => {  //Handle form submission when user clicks "add" button
     e.preventDefault();
 
-    if (input.trim() === "") return;
+    if (input.trim() === "") return; //prevent adding empty
 
-    dispatch({
+    dispatch({                     //Send an action to the reducer to cretae a new todo
       type: "Add_ToDo",
       payload: input
     });
@@ -30,3 +30,7 @@ function ToDoForm({ dispatch }) {
 }
 
 export default ToDoForm;
+
+// Form wrapper so both the Add button AND the Enter key submit the todo.
+// Using onSubmit keeps the logic in one place and makes the form behave naturally.
+//<form onSubmit={handleSubmit}></form>
